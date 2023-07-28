@@ -1,23 +1,36 @@
 class Solution {
 public:
-    //TABULATION
+    //COMPLEXITY REDUCTION
     int maxProfit(vector<int>& prices) {
         int profit=0;
         int n=prices.size();
         vector<vector<int>> dp(n+2,vector<int> (2,0));
         for(int index=n-1;index>=0;index--){
-            for(int buy=1;buy>=0;buy--){
-                if(buy){
-                    profit=max(-prices[index]+dp[index+1][0],0+dp[index+1][1]);
-                }
-                else{
-                    profit=max(prices[index]+dp[index+2][1],0+dp[index+1][0]);
-                }
-                dp[index][buy]=profit;
-            }
+            dp[index][1]=max(-prices[index]+dp[index+1][0],0+dp[index+1][1]);
+            dp[index][0]=max(prices[index]+dp[index+2][1],0+dp[index+1][0]);
         }
         return dp[0][1];    //as hum n-1 se 0 par jaa rahe hei toh answer will be stored in 0 only 
     }
+
+
+    //TABULATION
+    // int maxProfit(vector<int>& prices) {
+    //     int profit=0;
+    //     int n=prices.size();
+    //     vector<vector<int>> dp(n+2,vector<int> (2,0));
+    //     for(int index=n-1;index>=0;index--){
+    //         for(int buy=1;buy>=0;buy--){
+    //             if(buy){
+    //                 profit=max(-prices[index]+dp[index+1][0],0+dp[index+1][1]);
+    //             }
+    //             else{
+    //                 profit=max(prices[index]+dp[index+2][1],0+dp[index+1][0]);
+    //             }
+    //             dp[index][buy]=profit;
+    //         }
+    //     }
+    //     return dp[0][1];    //as hum n-1 se 0 par jaa rahe hei toh answer will be stored in 0 only 
+    // }
 
 
     //MEMOIZATION
