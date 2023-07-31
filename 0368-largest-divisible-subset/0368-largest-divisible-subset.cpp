@@ -1,33 +1,31 @@
 class Solution {
 public:
-    vector<int> largestDivisibleSubset(vector<int>& nums){
-        int n=nums.size();
-        sort(nums.begin(),nums.end());
-        vector<int>dp(n,1),hash(n);    
+    //SIMILAR TO LIS PRINTING
+    vector<int> largestDivisibleSubset(vector<int>& arr){
+        int n=arr.size();
+        vector<int> dp(n,1),hash(n);
+        int maxi=1,lastIndex=0;
+        sort(arr.begin(),arr.end());    //1st change
         for(int i=0;i<n;i++){
-            hash[i]=i; 
+            hash[i]=i;
             for(int prev=0;prev<i;prev++){
-                if(nums[i]%nums[prev]==0 && 1+dp[prev]> dp[i]){
-                    dp[i]=1+dp[prev];
+                if(arr[i]%arr[prev]==0 && 1+dp[prev]>dp[i]){    //2nd change
                     hash[i]=prev;
+                    dp[i]=1+dp[prev];
                 }
             }
-        }   
-        int ans=-1;
-        int lastIndex=-1;
-        for(int i=0;i<=n-1;i++){
-            if(dp[i]>ans){
-                ans=dp[i];    //updating the LIS or maxi
-                lastIndex=i;  //storing the index that has maximum value in dp 
+            if(dp[i]>maxi){
+                maxi=dp[i];
+                lastIndex=i;
             }
         }
-        vector<int> temp;   //backtracking starts from here
-        temp.push_back(nums[lastIndex]);
-        while(hash[lastIndex]!=lastIndex){ 
+        vector<int> temp;
+        temp.push_back(arr[lastIndex]);
+        while(hash[lastIndex]!=lastIndex){
             lastIndex=hash[lastIndex];
-            temp.push_back(nums[lastIndex]);    
+            temp.push_back(arr[lastIndex]);
         }
-        reverse(temp.begin(),temp.end());   //as we backtracked so elements are stored in a reverse order
+        reverse(temp.begin(),temp.end());
         return temp;
     }
 };
