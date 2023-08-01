@@ -1,6 +1,6 @@
 class Solution {
 public:
-    //NEW ALGORITHM USING BINARY SEARCH
+    //NEW ALGORITHM USING BINARY SEARCH , TC->O(NlogN) , SC->O(N)
     int lengthOfLIS(vector<int>& nums){
         int n=nums.size();
         vector<int> temp;
@@ -18,7 +18,7 @@ public:
     }
 
 
-    //NEW ALGORITHM - USING TABULATION
+    //NEW ALGORITHM - USING TABULATION , TC->O(N^2) , SC->O(N)
     // int lengthOfLIS(vector<int>& nums){
     //     int n=nums.size();
     //     vector<int> dp(n,1);
@@ -35,7 +35,7 @@ public:
     // }
 
 
-    //SPACE OPTIMIZATION
+    //SPACE OPTIMIZATION , TC->O(N^2) , SC->2*O(N)
     // int lengthOfLIS(vector<int>& nums){
     //     int n=nums.size();
     //     vector<int> next(n+1,0),cur(n+1,0);
