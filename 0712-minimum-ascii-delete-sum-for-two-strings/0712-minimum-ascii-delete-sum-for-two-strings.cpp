@@ -1,6 +1,6 @@
 class Solution {
 public:
-    //TBAULATION
+    //TABULATION
     int minimumDeleteSum(string s1, string s2){
         int n=s1.length(),m=s2.length();
         int sum1=0,sum2=0;
