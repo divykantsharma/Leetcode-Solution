@@ -1,5 +1,21 @@
 class Solution {
 public:
+    void dfs(int row,int col,vector<vector<char>>& grid,vector<vector<int>>& vis){
+        int n=grid.size();
+        int m=grid[0].size();
+        vis[row][col]=1;    //starting point
+        for(int deltarow=-1;deltarow<=1;deltarow++){
+            for(int deltacol=-1;deltacol<=1;deltacol++){
+                int nrow=row+deltarow;     //neighbour_row
+                int ncol=col+deltacol;     //neighbour_col   
+                if((abs(deltarow-deltacol)==1) && nrow>=0 && nrow<n && ncol>=0 && ncol<m && 
+                            grid[nrow][ncol]=='1' && vis[nrow][ncol]==0){
+                                vis[nrow][ncol]=1;
+                                dfs(nrow,ncol,grid,vis);
+                            }
+            }
+        }
+    }
     void bfs(int row,int col,vector<vector<char>>& grid,vector<vector<int>>& vis){
         int n=grid.size();
         int m=grid[0].size();
@@ -34,7 +50,8 @@ public:
             for(int col=0;col<m;col++){
                 if(!vis[row][col] && grid[row][col]=='1'){
                     count++;
-                    bfs(row,col,grid,vis);
+                    // bfs(row,col,grid,vis);
+                    dfs(row,col,grid,vis);
                 }
             }
         }
