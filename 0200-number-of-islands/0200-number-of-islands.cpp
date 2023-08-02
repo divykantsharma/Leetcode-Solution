@@ -10,9 +10,9 @@ public:
                 int ncol=col+deltacol;     //neighbour_col   
                 if((abs(deltarow-deltacol)==1) && nrow>=0 && nrow<n && ncol>=0 && ncol<m && 
                             grid[nrow][ncol]=='1' && vis[nrow][ncol]==0){
-                                vis[nrow][ncol]=1;
-                                dfs(nrow,ncol,grid,vis);
-                            }
+                    vis[nrow][ncol]=1;
+                    dfs(nrow,ncol,grid,vis);
+                }
             }
         }
     }
