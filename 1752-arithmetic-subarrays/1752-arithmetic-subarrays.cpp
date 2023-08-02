@@ -2,7 +2,7 @@ class Solution {
 public:
     bool isCheck(vector<int>& temp){
         sort(temp.begin(),temp.end());
-        // if(temp.size()<=2) return true;
+        if(temp.size()<=2) return true;
         int diff=temp[1]-temp[0];
         for(int i=2;i<temp.size();i++){
             if(temp[i]-temp[i-1]!=diff) return false;
