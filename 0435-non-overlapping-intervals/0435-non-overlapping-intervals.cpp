@@ -6,13 +6,13 @@ public:
     int eraseOverlapIntervals(vector<vector<int>>& intervals){
         if(intervals.size()==0) return 0;
         sort(intervals.begin(),intervals.end(),comp);
-        int count=-1;   //as tempinterval and intervals[0] will always match, therefore -1
-        vector<int> tempinterval=intervals[0];
+        int count=-1;   //as temp and intervals[0] will always match, therefore -1
+        vector<int> temp=intervals[0];
         for(auto it:intervals){
-            if(tempinterval[1]>it[0]){
+            if(temp[1]>it[0]){
                 count++;
             }
-            else tempinterval=it;
+            else temp=it;
         }
         return count;
     }
