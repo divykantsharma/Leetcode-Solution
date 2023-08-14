@@ -39,7 +39,7 @@ public:
     //     if(i==0 || j==0) return 0;      //Base Case
     //     if(dp[i][j]!=-1) return dp[i][j];
     //     if(text1[i-1]==text2[j-1]){      //condition where index value matches
-    //         return 1+f(i-1,j-1,text1,text2,dp);
+    //         return dp[i][j]=1+f(i-1,j-1,text1,text2,dp);
     //     }
     //     return dp[i][j]=max(f(i-1,j,text1,text2,dp),f(i,j-1,text1,text2,dp));  //not match
     // }
