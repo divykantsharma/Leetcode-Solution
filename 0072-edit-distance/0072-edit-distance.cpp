@@ -12,7 +12,7 @@ public:
                 if(word1[i-1]==word2[j-1]){     //condition of match
                     cur[j]=0+prev[j-1];
                 }
-                else{   //mismatch condition - min(inset,min(delete,replace))
+                else{   //mismatch condition - min(insert,min(delete,replace))
                     cur[j]=1+min(cur[j-1],min(prev[j],prev[j-1]));    
                 }
             }
@@ -34,7 +34,7 @@ public:
     //             if(word1[i-1]==word2[j-1]){     //condition of match
     //                 dp[i][j]=0+dp[i-1][j-1];
     //             }
-    //             else{   //mismatch condition - min(inset,min(delete,replace))
+    //             else{   //mismatch condition - min(insert,min(delete,replace))
     //                 dp[i][j]=1+min(dp[i][j-1],min(dp[i-1][j],dp[i-1][j-1]));    
     //             }
     //         }
@@ -51,7 +51,7 @@ public:
     //     if(word1[i-1]==word2[j-1]){     //condition of match
     //         return dp[i][j]=0+f(i-1,j-1,word1,word2,dp);
     //     }
-    //     else{   //mismatch condition - min(inset,min(delete,replace))
+    //     else{   //mismatch condition - min(insert,min(delete,replace))
     //         return dp[i][j]=1+min(f(i,j-1,word1,word2,dp),min(f(i-1,j,word1,word2,dp),f(i-1,j-1,word1,word2,dp)));    
     //     }
     // }
@@ -62,6 +62,7 @@ public:
     //     return f(n,m,word1,word2,dp);
     // }
 
+
     //MEMOIZATION
     // int f(int i,int j,string& word1,string& word2,vector<vector<int>> &dp){
     //     if(i<0) return j+1;     //word1 khatam hogayi , have char of word2 left to match , j+1 insertions on word1
@@ -70,7 +71,7 @@ public:
     //     if(word1[i]==word2[j]){     //condition of match
     //         return dp[i][j]=0+f(i-1,j-1,word1,word2,dp);
     //     }
-    //     else{   //mismatch condition - min(inset,min(delete,replace))
+    //     else{   //mismatch condition - min(insert,min(delete,replace))
     //         return dp[i][j]=1+min(f(i,j-1,word1,word2,dp),min(f(i-1,j,word1,word2,dp),f(i-1,j-1,word1,word2,dp)));    
     //     }
     // }
@@ -89,7 +90,7 @@ public:
     //     if(word1[i]==word2[j]){     //condition of match
     //         return 0+f(i-1,j-1,word1,word2);
     //     }
-    //     else{   //mismatch condition - min(inset,min(delete,replace))
+    //     else{   //mismatch condition - min(insert,min(delete,replace))
     //         return 1+min(f(i,j-1,word1,word2),min(f(i-1,j,word1,word2),f(i-1,j-1,word1,word2)));    
     //     }
     // }
