@@ -1,21 +1,15 @@
 class Solution {
 public:
     // USING MIN PRIORITY QUEUE AND COMPARATOR - TC->O(NlogK)
-    class comp{
-        public:
-        bool operator()(int a,int b){
-            return a>b;
-        }
-    };
-    int findKthLargest(vector<int>& nums, int k){
-        priority_queue<int,vector<int>,comp> pq;
-        for(int i=0;i<nums.size();i++){
-            pq.push(nums[i]);
-            if(pq.size()>k){
-                pq.pop();
+    int findKthLargest(vector<int>& arr, int k){
+        priority_queue<int,vector<int>,greater<int>> minh;
+        for(int i=0;i<arr.size();i++){
+            minh.push(arr[i]);
+            if(minh.size()>k){
+                minh.pop();
             }
         }
-        return pq.top();
+        return minh.top();
     }
 
 
