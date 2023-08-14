@@ -1,5 +1,6 @@
 class Solution{
 public:
+    //LINEAR SEARCH - also learn using Binary Search
     vector<vector<string>> suggestedProducts(vector<string>& products,string searchWord){
         int n=products.size();
         sort(products.begin(),products.end());
