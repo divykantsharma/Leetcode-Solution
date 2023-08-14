@@ -8,7 +8,7 @@ public:
             }
         }
     }
-    int findCircleNum(vector<vector<int>>& isConnected){
+    int findCircleNum(vector<vector<int>>& isConnected){    //n*n matrix therefore 0 based index
         int V=isConnected.size();
         vector<int> adjLs[V];   //CREATING OUR OWN ADJACENCY LIST
         for(int i=0;i<V;i++){
