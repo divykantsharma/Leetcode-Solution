@@ -7,33 +7,24 @@ public:
     }
     
     void addNum(int num){
-        if(maxh.empty() && minh.empty()){
-            maxh.push(num);
-        }
-        else{
-            if(maxh.top()<num) minh.push(num);
-            else maxh.push(num);
-        }
+        if(maxh.empty() || maxh.top()>num) maxh.push(num);
+        else minh.push(num);
         int n=maxh.size();      //balancing
         int m=minh.size();
-        if(n-m==2 || n-m==-2){
-            if(n>m){
-                int temp=maxh.top();
-                maxh.pop();
-                minh.push(temp);
-            }
-            else{
-                int temp=minh.top();
-                minh.pop();
-                maxh.push(temp);
-            }
+        if(n>m+1){
+            minh.push(maxh.top());
+            maxh.pop();
+        }
+        else if(m>n+1){
+            maxh.push(minh.top());
+            minh.pop();
         }
     }
     
     double findMedian(){
         int n=maxh.size();
         int m=minh.size();
-        if((n+m)%2==0) return ((1.0)*(maxh.top()+minh.top()))/2;    //even size
+        if(n==m) return ((1.0)*(maxh.top()+minh.top()))/2;    //even size
         else return (n>m)?maxh.top():minh.top();        //odd size
     }
 
