@@ -3,8 +3,7 @@ public:
     //PREFIX SUM + MAP - TC->O(N)
     int subarraySum(vector<int>& nums,int k){
         unordered_map<int,int> mp;
-        int prefSum=0;
-        int count=0;
+        int prefSum=0,count=0;
         for(int i=0;i<nums.size();i++){
             prefSum+=nums[i];
             if(prefSum==k) count++;
