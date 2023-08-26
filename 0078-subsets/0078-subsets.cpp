@@ -2,8 +2,7 @@ class Solution {
 public:
     //RECURSION - STRIVER
     void f(int index,vector<int>& nums,vector<int>& ds,vector<vector<int>>& ans){
-        int n=nums.size();
-        if(index>=n){
+        if(index>=nums.size()){
             ans.push_back(ds);
             return;
         }
@@ -11,7 +10,6 @@ public:
         ds.push_back(nums[index]);
         f(index+1,nums,ds,ans);
         ds.pop_back();
-        return;
     } 
     vector<vector<int>> subsets(vector<int>& nums){
         vector<vector<int>> ans;
