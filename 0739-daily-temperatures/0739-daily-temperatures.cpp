@@ -31,7 +31,7 @@ public:
         return ans;
     }
 
-        // ARRAY APPROACH - BUT TIME LIMIT EXCEEDED
+        // ARRAY APPROACH - O(N^2) - TLE
         // vector<int> ans(temperatures.size(),0);
         // for(int i=0;i<temperatures.size();i++){
         //     for(int j=i+1;j<temperatures.size();j++){
