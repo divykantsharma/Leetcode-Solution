@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //LIS
     int findLongestChain(vector<vector<int>>& pairs){
         sort(pairs.begin(),pairs.end());
         int n=pairs.size();
@@ -15,12 +16,5 @@ public:
             maxi=max(maxi,dp[i]);
         }
         return maxi;
-        // int last=pairs[0][1];
-        // for(int i=1;i<n;i++){
-        //     if(last<pairs[i][0]){
-        //         ans++;
-        //         last=pairs[i][1];
-        //     }
-        // }
     }
 };
