@@ -41,7 +41,7 @@ public:
             }
         }
     }
-    int numIslands(vector<vector<char>>& grid) {
+    int numIslands(vector<vector<char>>& grid){
         int n=grid.size();
         int m=grid[0].size();
         int count=0;
