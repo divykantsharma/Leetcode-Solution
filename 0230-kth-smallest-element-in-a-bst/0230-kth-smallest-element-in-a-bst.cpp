@@ -14,7 +14,7 @@ public:
     void inorder(TreeNode* root,int& k,int& ans){
         if(root==NULL) return;
         inorder(root->left,k,ans);
-        if(--k==0){
+        if((k--)==1){
             ans=root->val;
             return;
         }
