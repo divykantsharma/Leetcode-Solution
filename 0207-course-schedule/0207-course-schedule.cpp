@@ -2,7 +2,7 @@ class Solution {
 public:
     //13 July - Daily Streak - NOW DONE
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites){
-        int N=numCourses;
+        int N=numCourses;       //Topo Sort using BFS - Kahn's Algo
 	    vector<int> adj[N];
         for(auto it:prerequisites){
             adj[it[0]].push_back(it[1]);
