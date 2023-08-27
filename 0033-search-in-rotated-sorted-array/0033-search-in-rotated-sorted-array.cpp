@@ -20,7 +20,7 @@ public:
         return -1;
     }
 
-    //Finding the min element then searcing in 2 sorted arrays - ADITYA VERMA
+    //Finding the min element then searching in 2 sorted arrays - ADITYA VERMA
     // int BinarySearch(vector<int>& nums,int start,int end,int target){
     //     int n=nums.size();
     //     int st=start,en=end;
