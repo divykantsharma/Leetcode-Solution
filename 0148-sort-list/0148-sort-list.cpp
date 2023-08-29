@@ -8,9 +8,10 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-//USING MERGE SORT - TC -> O(NlogN) , SC -> O(1)
+
 class Solution{
 public:
+    //USING MERGE SORT - TC -> O(NlogN) , SC -> O(1)
     ListNode* sortList(ListNode* head){
         if(head==NULL || head->next==NULL) return head;
         ListNode *temp=NULL;    //keeps track of node which is end of our first half
@@ -62,8 +63,6 @@ public:
             ft->next=head2;
             head2=head2->next;
         }
-        // if(head1!=NULL) ft->next=head1;
-        // if(head2!=NULL) ft->next=head2;
         return fh;
     }
 }; 
