@@ -9,9 +9,9 @@
  * };
  */
 
+//USING MERGE SORT - TC -> O(NlogN) , SC -> O(1)
 class Solution{
 public:
-    //USING MERGE SORT - TC -> O(NlogN) , SC -> O(1)
     ListNode* sortList(ListNode* head){
         if(head==NULL || head->next==NULL) return head;
         ListNode *temp=NULL;    //keeps track of node which is end of our first half
@@ -89,3 +89,24 @@ public:
 //         return head;
 //     }
 // };
+
+
+// USING INSERTION SORT - TC -> O(N^2) , SC -> O(1) - TLE (29/30) TC passed
+// class Solution {
+// public:
+//     ListNode* sortList(ListNode* head){
+//         ListNode* dummy=new ListNode(10001);
+//         while(head){
+//             ListNode* next=head->next;
+//             ListNode* temp=dummy;
+//             while(temp->next && temp->next->val<head->val){
+//                 temp=temp->next;
+//             }
+//             head->next=temp->next;
+//             temp->next=head;
+//             head=next;
+//         }
+//         return dummy->next;
+//     }
+// };
+
