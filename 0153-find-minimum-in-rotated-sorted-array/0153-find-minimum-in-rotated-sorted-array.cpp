@@ -6,6 +6,10 @@ public:
         int s=0,e=nums.size()-1,ans=INT_MAX; 
         while(s<=e){
             int m=s+(e-s)/2;
+            if(nums[s]<=nums[e]){   //condition for optimizing the answer
+                ans=min(ans,nums[s]);
+                break;
+            }
             if(nums[s]<=nums[m]){
                 ans=min(ans,nums[s]);
                 s=m+1;
