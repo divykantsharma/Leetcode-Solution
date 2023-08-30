@@ -1,13 +1,9 @@
 class Solution {
 public:
-    //BINARY SEARCH - TC->O((M+N)log(M+N))
+    //BINARY SEARCH - TC->O(log(M+N))
     // double findMedianSortedArrays(vector<int>& nums1,vector<int>& nums2){ 
-
+    //     //LEARN THROUGH BINARY SEARCH
     // }
-
-
-
-
 
     //Merging 2 sorted arrays - TC->O(M+N)
     double findMedianSortedArrays(vector<int>& nums1,vector<int>& nums2){
