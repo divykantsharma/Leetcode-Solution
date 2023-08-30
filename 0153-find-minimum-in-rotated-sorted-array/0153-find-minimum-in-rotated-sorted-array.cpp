@@ -10,11 +10,11 @@ public:
                 ans=min(ans,nums[s]);
                 break;
             }
-            if(nums[s]<=nums[m]){
+            if(nums[s]<=nums[m]){   //left half of array is sorted
                 ans=min(ans,nums[s]);
                 s=m+1;
             }
-            else if(nums[m]<nums[e]){
+            else{   //right half of array is sorted
                 ans=min(ans,nums[m]);
                 e=m-1;
             }
