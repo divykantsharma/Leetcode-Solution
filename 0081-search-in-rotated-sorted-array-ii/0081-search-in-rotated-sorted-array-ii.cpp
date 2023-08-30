@@ -1,13 +1,11 @@
-class Solution {
+class Solution{
 public:
     bool search(vector<int>& nums,int target){
         int lo=0,hi=nums.size()-1;
         while(lo<=hi){
             int mid=lo+(hi-lo)/2;
-            if(nums[mid]==target){
-                return true;
-            }
-            if(nums[lo]==nums[mid] && nums[mid]==nums[hi]){
+            if(nums[mid]==target) return true;
+            if(nums[lo]==nums[mid] && nums[mid]==nums[hi]){//ONLY extra condition from search in sorted 1   
                 lo++,hi--;
                 continue;
             }
@@ -20,6 +18,6 @@ public:
                 else hi=mid-1;   
             }
         }
-        return false; 
+        return false;
     }
 };
