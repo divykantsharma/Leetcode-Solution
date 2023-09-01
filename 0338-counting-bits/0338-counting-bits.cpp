@@ -17,7 +17,7 @@ public:
     }
 
 
-    //WITHOUT KNOWLWDGE OF BITS
+    // WITHOUT KNOWLWDGE OF BITS
     // string decimaltobinary(int n){
     //     string ans="";
     //     while(n){
