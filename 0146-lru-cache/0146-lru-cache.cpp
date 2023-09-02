@@ -1,17 +1,16 @@
-class LRUCache {
+class Node{
+    public:
+    int key;
+    int val;
+    Node* next;
+    Node* prev;
+    Node(int key,int val){  //constructor
+        this->key=key;
+        this->val=val;
+    }
+};
+class LRUCache{
 public:
-    class Node{
-        public:
-        int key;
-        int val;
-        Node* next;
-        Node* prev;
-        Node(int key,int val){  //constructor
-            this->key=key;
-            this->val=val;
-        }
-    };
-
     Node* head=new Node(-1,-1);
     Node* tail=new Node(-1,-1);
     int cap;
