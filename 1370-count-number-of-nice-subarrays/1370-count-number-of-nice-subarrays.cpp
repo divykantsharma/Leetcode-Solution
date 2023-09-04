@@ -1,3 +1,4 @@
+//converted to - https://leetcode.com/problems/subarray-sum-equals-k/
 class Solution{
 public:
     int numberOfSubarrays(vector<int>& nums,int k){
