@@ -12,7 +12,6 @@ public:
                 if(mp[s[j]]==0) count--;
             }
             if(count==0){
-                // MinL=min(MinL,j-i+1);
                 if(MinL>j-i+1){
                     ans=s.substr(i,j-i+1);
                     MinL=ans.size();
