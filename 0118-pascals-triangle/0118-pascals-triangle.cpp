@@ -14,8 +14,7 @@ public:
         for(int i=0;i<n;i++){
             vector<int> temp;
             for(int j=0;j<=i;j++){
-                int val=ncr(i,j);
-                temp.push_back(val);
+                temp.push_back(ncr(i,j));
             }
             ans.push_back(temp);
         }
